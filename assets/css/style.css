@@ -6,23 +6,29 @@
 }
 
 :root {
-    --purple-200: #9a7bd1;
-    --purple-500: #6b36c8;
-    --purple-800: #441f88;
-    --black-800: #171717;
-    --gray-200: #cccccc;
-    --white: #f9f9f9;
+    --purple-200: #cbb3f3;
+  --purple-500: #a678e0;
+  --purple-800: #603ba0;
+  --white: #f9f9f9;
+  --black: #171717;
+}
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
+
 body {
-    background: var(--gray-200);
+    background-color: #f3e8ff; /* lilás bem clarinho */
     color: var(--black-800);
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
 
 /* Títulos e textos */
 h1, h2, h3 {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 h1 { 
@@ -60,7 +66,7 @@ header {
     background: var(--purple-800);
     padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: sticky;
     top: 0;
@@ -110,7 +116,7 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0rem;
     color: var(--white);
     background-color: var(--purple-500);
     font-weight: bold;
@@ -144,6 +150,10 @@ footer img:hover {
             brightness(86%) 
             contrast(88%);
 }
+main {
+  flex: 1; /* empurra o footer pra baixo */
+}
+
 
 /* Contato */
 .main_contato {
@@ -215,6 +225,124 @@ form span{
 
 .article_mapa iframe {
     align-self: center; 
-
-    
 }
+.inicio {
+  display: flex;
+  
+  justify-content: center; /* coloca o conteúdo no topo */
+  align-items: center; /* alinha o conteúdo à esquerda */
+  height: 30vh; /* ocupa a altura total da viewport */
+  gap: 10rem;     /* espaço entre texto e imagem */
+ 
+}
+/* Texto */
+.inicio .texto {
+  text-align: left; /* ou center, se quiser tudo centralizado */
+  max-width: 500px;
+}
+
+
+
+.titulo {
+  font-size: 15px; /* tamanho menor */
+  color: #be6cf8; /* tom lilás */
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+.titulo span {
+  color: #be6cf8;
+  font-weight: 600;
+}
+
+.titulo::after {
+  content: " 👋";
+  display: inline-block;
+  margin-left: 8px;
+  animation: wave 1.8s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60%, 100% { transform: rotate(0deg); }
+}
+.frase-destaque {
+  font-size: 26px; /* tamanho grande */
+  font-weight: 700; /* deixa mais grossa */
+  color: #0c0c0c; /* lilás mais escuro */
+  max-width: 600px; /* limita a largura */
+  margin-top: 0rem;
+  line-height: 1.4;
+  text-align: left; /* mantém alinhada com o título */
+  font-family: "Poppins", sans-serif;
+}
+
+/* Container do avatar */
+.avatar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* empurra a imagem pro lado direito */
+  margin-right: -300px; /* controla o espaço até a borda direita */
+  margin-top: -200px; /* sobe um pouco o bloco da imagem */
+}
+
+/* Estilo da imagem em si */
+.avatar img {
+  width: 230px;
+  height: 230px;
+  border-radius: 20%; /* deixa as pontas arredondadas */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.avatar img:hover {
+  transform: scale(1.05); /* leve aumento ao passar o mouse */
+}
+/* Container dos botões */
+.botoes {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px; /* espaçamento entre os botões */
+}
+
+/* Estilo base dos botões */
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Botão de contato */
+.btn-contato {
+  background-color: #b388eb; /* lilás */
+  color: white;
+}
+
+.btn-contato:hover {
+  background-color: #9c6de3;
+  transform: scale(1.05);
+}
+
+/* Botão de saiba mais */
+.btn-saiba {
+  border: 2px solid #b388eb;
+  color: #b388eb;
+  background-color: transparent;
+}
+
+.btn-saiba:hover {
+  background-color: #b388eb;
+  color: white;
+  transform: scale(1.05);
+}
+
